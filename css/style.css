@@ -960,7 +960,7 @@ textarea::placeholder {
 
 /* Footer START */
 .site-footer {
-	background-color: #1C2835;
+	background-color: #2B2B2B;
 	color: #fff;
 	font-size: 14px;
 }
@@ -974,12 +974,14 @@ textarea::placeholder {
 	border-right: 1px solid rgba(239, 239, 239, 0.24);
 }
 .footer-logo {
-	margin-bottom: 25px;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
 }
 
 .footer-right {
 	display: flex;
-	justify-content: space-between;
+	justify-content:space-around;
 	width: 100%;
 	padding: 60px 0 60px 60px;
 }
@@ -1037,7 +1039,31 @@ textarea::placeholder {
 }
 /* Footer END */
 
+/* schedule START */
+.footer-schedule table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	color: #ccc; /* opcional */
 
+}
+
+.footer-schedule td {
+	padding: 4px 0;
+	vertical-align: top;
+}
+
+.footer-schedule td:first-child {
+	font-weight: 700;
+	padding-right: 12px;
+	white-space: nowrap;
+
+}
+
+.footer-schedule td:last-child {
+	text-align: right;
+}
+/* schedule END */
 
 /* Responsive START */
 @media screen and (max-width: 1200px) {
@@ -1232,6 +1258,17 @@ textarea::placeholder {
 		margin-bottom: 30px;
 	}
 	/* Footer 992 END */
+
+	/* schedule START */
+	.footer-schedule td:first-child {
+		text-align: right;
+
+	}
+
+	.footer-schedule td:last-child {
+		text-align: left;
+	}
+	/* schedule END */
 
 }
 

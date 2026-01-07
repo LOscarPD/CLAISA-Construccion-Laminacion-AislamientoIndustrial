@@ -32,75 +32,29 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	// Number counter START
-	function animateCounter(element, targetValue, duration) {
-		jQuery({ count: jQuery(element).text() }).animate(
-			{
-				count: targetValue
-			},
-			{
-				duration: duration,
-				easing: 'linear',
-				step: function () {
-					jQuery(element).text(Math.floor(this.count));
-				},
-				complete: function () {
-					jQuery(element).text(targetValue);
-				},
-			}
-		);
-	}
-
-	function isElementInViewport(elem) {
-		if (!elem) return false;
-		var rect = elem.getBoundingClientRect();
-		return (
-			rect.top >= 0 &&
-			rect.left >= 0 &&
-			rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-			rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		);
-	}
-
-	$(window).on('scroll', function () {
-		scrollHeader();
-		showArrowUp();
-
-		if (isElementInViewport($('.num-scroll')[0])) {
-			$('.num-js').each(function () {
-				var targetValue = parseInt($(this).data('count'));
-				var duration = 2000;
-				animateCounter(this, targetValue, duration);
-			});
-		}
-	});
-
-	$(window).trigger('scroll');
-	// Number counter END
-
 	scrollHeader();
 	showArrowUp();
 
 	$('.anchor-link').on('click', function () {
-	    let href = $(this).attr('href');
+		let href = $(this).attr('href');
 
-	    $('html, body').animate({
-	        scrollTop: $(href).offset().top
-	    }, {
-	        duration: 700,
-	    });
+		$('html, body').animate({
+			scrollTop: $(href).offset().top
+		}, {
+			duration: 700,
+		});
 		$('.header-mobile-wrap').slideUp(500);
 		$('.hamburger').removeClass('is-active');
-	    return false;
+		return false;
 	});
 
 	$('.go-up').on('click', function () {
-	    $('html, body').animate({
-	        scrollTop: 0
-	    }, {
-	        duration: 700,
-	    });
-	    return false;
+		$('html, body').animate({
+			scrollTop: 0
+		}, {
+			duration: 700,
+		});
+		return false;
 	});
 	// Header END
 	
@@ -129,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		removalDelay: 500,
 		callbacks: {
 			beforeOpen: function() {
-			   this.st.mainClass = this.st.el.attr('data-effect');
+				this.st.mainClass = this.st.el.attr('data-effect');
 			}
 		},
 	});
@@ -144,12 +98,21 @@ document.addEventListener('DOMContentLoaded', () => {
 		gallery: {
 			enabled: true
 		},
+		image: {
+			verticalFit: true
+		},
+		fixedContentPos: true,
+		closeOnContentClick: true,
 		callbacks: {
 			beforeOpen: function() {
-				this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+				this.st.image.markup =
+					this.st.image.markup.replace(
+						'mfp-figure',
+						'mfp-figure mfp-with-anim'
+					);
 				this.st.mainClass = this.st.el.attr('data-effect');
 			}
-		},
+		}
 	});
 
 	$('.gallery-btn a').on('click', function(e) {
@@ -158,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		if($(this).hasClass('is-active')) {
 			$(this).removeClass('is-active');
-			$(this).text('Show more');
+			$(this).text('Mostar más');
 			galleryItem.each(function() {
 				if($(this).hasClass('is-active')) {
 					$(this).removeClass('is-active');
@@ -168,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 		else {
 			$(this).addClass('is-active');
-			$(this).text('Hide');
+			$(this).text('Ocultar');
 			galleryItem.each(function() {
 				if(!$(this).is(':visible')) {
 					$(this).addClass('is-active');
@@ -199,10 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			992: {
 				slidesPerView: 3,
 			},
-		  }
+		}
 	});
 	// Reviews END
-
-	
 
 })

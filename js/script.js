@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-	new WOW().init();
-
 	// Header START
 	$('.hamburger').on('click', function() {
 		if($(this).hasClass('is-active')) {
@@ -85,6 +83,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		speed: 1000,
 		spaceBetween: 0,
 		autoHeight: true,
+		loop: true,
+		autoplay: {
+			delay: 3500,
+			disableOnInteraction: false,
+			pauseOnMouseEnter: true,
+		},
 		navigation: {
 			nextEl: '.banner-swiper .swiper-button-next',
 			prevEl: '.banner-swiper .swiper-button-prev',

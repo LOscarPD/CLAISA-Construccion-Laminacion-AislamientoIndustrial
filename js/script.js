@@ -128,28 +128,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	// Gallery END
 
-
-	// Reviews START
-	const reviewsSwiper = new Swiper('.reviews-swiper', {
-		speed: 1000,
-		spaceBetween: 20,
-		pagination: {
-			el: '.reviews-swiper .swiper-pagination',
-			type: 'bullets',
-			clickable: true,
-		},
-		breakpoints: {
-			320: {
-				slidesPerView: 1,
-			},
-			575: {
-				slidesPerView: 2,
-			},
-			992: {
-				slidesPerView: 3,
-			},
-		}
-	});
-	// Reviews END
-
 })

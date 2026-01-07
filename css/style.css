@@ -208,7 +208,7 @@ textarea::placeholder {
 	position: fixed;
 	right: 30px;
 	bottom: 30px;
-	z-index: 9;
+	z-index: 999;
 	transition: 0.35s ease;
 	transform: translateY(100px);
 	opacity: 0.5;
@@ -220,7 +220,7 @@ textarea::placeholder {
 	transform: none;
 }
 .go-up a {
-	background-color: #D62E4C;
+	background-color: #C4000A;
 	width: 60px;
 	height: 60px;
 	display: flex;

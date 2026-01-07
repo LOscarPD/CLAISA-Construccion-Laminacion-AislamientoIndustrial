@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	function scrollHeader() {
 		let headerTopHeight = $('.header-top').height();
-		if($(this).scrollTop() > headerTopHeight) {
+		if($(window).scrollTop() > headerTopHeight) {
 			$('.header-bottom').addClass('is-fixed');
 		}
 		else {
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 	function showArrowUp() {
-		if($(this).scrollTop() > 1500) {
+		if($(window).scrollTop() > 1000) {
 			$('.go-up').addClass('is-active');
 		}
 		else {
@@ -32,8 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	}
 
-	scrollHeader();
-	showArrowUp();
+	$(window).on('scroll', function () {
+		scrollHeader();
+		showArrowUp();
+	});
+
 
 	$('.anchor-link').on('click', function () {
 		let href = $(this).attr('href');
@@ -48,13 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		return false;
 	});
 
-	$('.go-up').on('click', function () {
-		$('html, body').animate({
-			scrollTop: 0
-		}, {
-			duration: 700,
+	document.querySelector('.go-up').addEventListener('click', function (e) {
+		e.preventDefault();
+
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
 		});
-		return false;
 	});
 	// Header END
 	
@@ -74,23 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		},
 	});
 	// Banner END
-
-
-	// Services START
-	$('.services-btn').magnificPopup({
-		type: 'inline',
-		showCloseBtn: false,
-		removalDelay: 500,
-		callbacks: {
-			beforeOpen: function() {
-				this.st.mainClass = this.st.el.attr('data-effect');
-			}
-		},
-	});
-	$('.modal-form-close').on('click', function() {
-		$.magnificPopup.close();
-	});
-	// Services END
 
 	// Gallery START
 	$('.gallery-wrap a').magnificPopup({

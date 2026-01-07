@@ -1,0 +1,78 @@
+# ======================================================
+# Node
+# ======================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+#package-lock.json
+.pnpm-store/
+.eslintcache
+
+# ======================================================
+# Build / Output
+# ======================================================
+dist/
+build/
+public/build/
+public/dist/
+.vite/
+.cache/
+.temp/
+.tmp/
+out/
+coverage/
+
+# ======================================================
+# Tailwind
+# ======================================================
+# Archivos generados automáticamente por Tailwind CLI si los usas
+*.css.map
+
+# ======================================================
+# Sistemas operativos
+# ======================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# ======================================================
+# IDE / Editores
+# ======================================================
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (PhpStorm, WebStorm, etc.)
+.idea/
+
+# ======================================================
+# Ambiente / Variables sensibles
+# ======================================================
+.env
+.env.*
+*.pem
+*.key
+
+# ======================================================
+# Backups temporales
+# ======================================================
+*.temp
+*.tmp
+*.bak
+*.swp
+*.swo
+*.orig

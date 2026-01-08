@@ -666,6 +666,31 @@ textarea::placeholder {
 }
 /* schedule END */
 
+/* Animaciones START */
+.animate {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity .8s ease, transform .8s ease;
+}
+
+.animate.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.animate-left {
+	transform: translateX(-40px);
+}
+
+.animate-right {
+	transform: translateX(40px);
+}
+
+.animate-up {
+	transform: translateY(40px);
+}
+/* Animaciones END */
+
 /* Responsive START */
 @media screen and (max-width: 1200px) {
 

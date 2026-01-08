@@ -151,4 +151,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	// Gallery END
 
+	// Animaciones START
+	const animatedItems = document.querySelectorAll('.animate');
+
+	const observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+			if (entry.isIntersecting) {
+				entry.target.classList.add('is-visible');
+				observer.unobserve(entry.target);
+			}
+		});
+	}, {
+		threshold: 0.15
+	});
+
+	animatedItems.forEach(el => observer.observe(el));
+	// Animaciones END
+
+
 })

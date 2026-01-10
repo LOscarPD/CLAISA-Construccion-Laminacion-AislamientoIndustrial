@@ -101,6 +101,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 	// Banner END
 
+	// Clients START
+	
+	// Clients END
+
 	// Gallery START
 	$('.gallery-wrap a').magnificPopup({
 		type: 'image',

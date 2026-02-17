@@ -389,6 +389,9 @@ textarea::placeholder {
 	display: flex;
 	flex-direction: column;
 }
+.services-thumb{
+	aspect-ratio: 1 / 1;
+}
 .services-thumb img {
 	display: block;
 	width: 100%;
@@ -437,7 +440,7 @@ textarea::placeholder {
 	top: 0;
 	width: 80px;
 	height: 100%;
-	z-index: 2;
+	z-index: 1;
 	pointer-events: none;
 }
 .clients-marquee::before {
@@ -505,6 +508,7 @@ textarea::placeholder {
 .gallery-wrap a {
 	position: relative;
 	overflow: hidden;
+	aspect-ratio: 1 / 1;
 }
 .gallery-item:nth-child(n+7) {
 	display: none;
@@ -1021,9 +1025,9 @@ textarea::placeholder {
 	.hamburger span:last-child {
 		bottom: 0;
 	}
-	.hamburger.is-active {
+	/* .hamburger.is-active {
 		
-	}
+	} */
 	.hamburger.is-active span:first-child {
 		top: 50%;
 		transform: translateY(-50%) rotate(45deg);
